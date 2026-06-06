@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zainuddin Muhammad Zakiy - Crypto Luxury Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Urbanist:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #060608;
+            --bg-card: rgba(18, 18, 24, 0.6);
+            --accent-purple: #b026ff;
+            --accent-cyan: #00ffd5;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(176, 38, 255, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Urbanist', sans-serif;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(176, 38, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 255, 213, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        header {
+            padding: 30px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+      
+        .profile-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 50px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .profile-left {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .profile-avatar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 4px solid rgba(0,255,213,0.12);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .profile-info h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .profile-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0, 255, 213, 0.1);
+            border: 1px solid rgba(0, 255, 213, 0.2);
+            color: var(--accent-cyan);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+        }
+
+        .meta-item span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+
+        .meta-item p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+      
+        .crypto-btn {
+            background: linear-gradient(135deg, var(--accent-purple), #8200d6);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 8px 24px var(--border-glow);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .crypto-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(176, 38, 255, 0.4);
+        }
+
+        
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+      
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .movie-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 14px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-glow);
+            box-shadow: 0 15px 35px rgba(176, 38, 255, 0.1);
+        }
+
+        .movie-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px auto;
+            font-size: 28px;
+            color: var(--accent-purple);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .movie-card:hover .movie-icon {
+            color: var(--accent-cyan);
+            background: rgba(0, 255, 213, 0.05);
+            border-color: rgba(0, 255, 213, 0.2);
+        }
+
+        .movie-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.04);
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+        }
+
+   
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(5, 5, 8, 0.85);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modern-modal {
+            background: #0f0f15;
+            border: 2px solid var(--accent-purple);
+            border-radius: 30px;
+            padding: 45px 40px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 60px rgba(176, 38, 255, 0.25);
+            transform: scale(0.85);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .modal-overlay.active .modern-modal {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 22px;
+            right: 22px;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--text-muted);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 38, 38, 0.1);
+            border-color: rgba(255, 38, 38, 0.3);
+            color: #ff4a4a;
+            transform: rotate(90deg);
+        }
+
+        .zodiac-badge {
+            font-size: 64px;
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 255, 213, 0.3);
+        }
+
+        .modern-modal h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .modern-modal p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .crypto-hash-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 12px;
+            font-family: monospace;
+            font-size: 13px;
+            color: var(--accent-purple);
+            word-break: break-all;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">ZAINUDDIN.CORE</div>
+        <div style="font-size: 14px; color: var(--text-muted); font-family: monospace;">NODE_CONNECTED</div>
+    </header>
+
+    <div class="container">
+        <section class="profile-card">
+            <div class="profile-header">
+                <div class="profile-left">
+                    <div class="profile-avatar">
+                        <img id="profile-photo" src="" alt="Foto Profil">
+                    </div>
+                    <div class="profile-info">
+                        <span class="profile-tag">Teknik Informatika</span>
+                        <h1 id="display-name">Loading...</h1>
+                        <p style="color: var(--text-muted); font-size: 18px;" id="display-role">Loading...</p>
+                    </div>
+                </div>
+                <button class="crypto-btn" onclick="openZodiacOracle()">
+                    <i class="fa-solid fa-bolt"></i> Cek Oracle Zodiak
+                </button>
+            </div>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <span>Student NIM Target</span>
+                    <p style="color: var(--accent-cyan);" id="display-nim">000000</p>
+                </div>
+                <div class="meta-item">
+                    <span>Tanggal Lahir (Seed)</span>
+                    <p id="display-dob">0000-00-00</p>
+                </div>
+                <div class="meta-item">
+                    <span>Arsitektur UI</span>
+                    <p style="color: var(--text-muted);">Crypto Luxury v2.0</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title"><i class="fa-solid fa-film" style="color: var(--accent-cyan);"></i> Film Favorit</h2>
+            <div class="movies-grid" id="movies-container">
+                </div>
+        </section>
+    </div>
+
+    <div class="modal-overlay" id="zodiacModal">
+        <div class="modern-modal">
+            <div class="close-modal" onclick="closeZodiacOracle()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="zodiac-badge">
+                <i class="fa-solid fa-star-and-crescent"></i>
+            </div>
+            <h2 id="modal-title">Oracle Response</h2>
+            <p id="modal-desc">Sistem memetakan variabel tanggal lahir Anda.</p>
+            <div class="crypto-hash-box" id="modal-hash">
+                TX_HASH: 0x...
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Zainuddin Muhammad Zakiy. Built for modern blockchain engineering interfaces.
+    </footer>
+
+    <script>
+        // INPUT VARIABLE AS REQUESTED
+        const nama = "Zainuddin Muhammad Zakiy";
+        const pekerjaan = "Mahasiswa Teknik Informatika";
+        const tanggalLahir = "2000-01-32"; 
+        const nim = "23552011173";
+
+        const favoritFilm = [
+            "Kimetsu no Yaiba",
+            "THE HOBBIT",
+            "Transformers",
+            "Resident Evil",
+            "Pengabdi Setan"
+        ];
+
+
+        const posters = [
+            "https://cdn.cgv.id/uploads_v2/movie/compressed/25030700.jpg",
+            "https://m.media-amazon.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_FMjpg_UX1000_.jpg",
+            "https://upload.wikimedia.org/wikipedia/id/9/94/Transformers_Age_of_Extinction_Poster.jpeg",
+            "https://lh3.googleusercontent.com/proxy/Ui8RBCVMUdusfH2BQbrNvWliHiQLRsh2M2yIBTZ6qay2GMhTC4pf4JvzWKFpc2iiyBdnlHhM3o9slGLfrKzNmtJFuDvLNL4I9LtkC7_jkMp5bhlJoXS0eQjpbQ",
+            "https://media.suara.com/pictures/original/2022/06/24/49711-poster-resmi-film-pengabdi-setan-2-communion.jpg"
+        ];
+
+        // Unique premium icon assignments for your movies (kept for fallback)
+        const icons = [
+            "fa-fire-flame-curved",
+            "fa-ring",
+            "fa-robot",
+            "fa-biohazard",
+            "fa-ghost"
+        ];
+
+        const fotoUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5addy-WFk1RV0L-3NHvOO8h1B6WoLp-enQA&s";
+
+        // Binding to UI Elements
+        document.getElementById('display-name').innerText = nama;
+        document.getElementById('display-role').innerText = pekerjaan;
+        document.getElementById('display-nim').innerText = nim;
+        document.getElementById('display-dob').innerText = tanggalLahir;
+        document.getElementById('profile-photo').src = fotoUrl;
+
+        // Render Cards with posters
+        const container = document.getElementById('movies-container');
+        favoritFilm.forEach((film, index) => {
+            const card = document.createElement('div');
+            card.className = 'movie-card';
+            card.innerHTML = `
+                <img class="movie-poster" src="${posters[index] || 'https://via.placeholder.com/400x640.png?text=No+Poster'}" alt="${film} poster">
+                <div class="movie-icon"><i class="fa-solid ${icons[index] || 'fa-clapperboard'}"></i></div>
+                <h3>${film}</h3>
+            `;
+            container.appendChild(card);
+        });
+
+   
+        function calculateZodiacNode(dateStr) {
+            const pieces = dateStr.split('-');
+            const y = parseInt(pieces[0]);
+            const m = parseInt(pieces[1]) - 1; 
+            const d = parseInt(pieces[2]);
+            
+            const processed = new Date(y, m, d);
+            const validMonth = processed.getMonth() + 1;
+            const validDay = processed.getDate();
+
+            if ((validMonth == 1 && validDay >= 20) || (validMonth == 2 && validDay <= 18)) {
+                return "Aquarius";
+            } else if ((validMonth == 2 && validDay >= 19) || (validMonth == 3 && validDay <= 20)) {
+                return "Pisces";
+            } else {
+                return "Cosmic Alignment";
+            }
+        }
+
+        // Modal UX Actions
+        function openZodiacOracle() {
+            const finalZodiac = calculateZodiacNode(tanggalLahir);
+            
+            document.getElementById('modal-title').innerText = `Zodiak Anda: ${finalZodiac}`;
+            document.getElementById('modal-desc').innerText = `Menggunakan basis data input tanggal "${tanggalLahir}", kalibrasi mesin pembaca orbit mengonversi data Anda ke gugusan rasi bintang ${finalZodiac} secara real-time.`;
+            document.getElementById('modal-hash').innerText = `METADATA_PROOF: 0x${Math.random().toString(16).substr(2, 7).toUpperCase()}_NIM${nim}`;
+            
+            document.getElementById('zodiacModal').classList.add('active');
+        }
+
+        function closeZodiacOracle() {
+            document.getElementById('zodiacModal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
