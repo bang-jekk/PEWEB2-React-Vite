@@ -1,16 +1,142 @@
-# React + Vite
+# 🎬 React Vite - Perkenalan Diri & Zodiac Checker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Deskripsi Project
 
-Currently, two official plugins are available:
+Project ini dibuat untuk memenuhi tugas Pemrograman Web 2 menggunakan React dan Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Aplikasi menampilkan:
 
-## React Compiler
+* Data perkenalan diri
+* Nama
+* Pekerjaan
+* Tanggal lahir
+* Pengecekan zodiac berdasarkan tanggal lahir
+* Daftar 5 film favorit
+* Tampilan modern dengan konsep Crypto Luxury UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Teknologi Yang Digunakan
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React JS
+* Vite
+* JavaScript
+* CSS3
+* HTML5
+
+---
+
+## ✨ Fitur
+
+### 1. Perkenalan Diri
+
+Menampilkan informasi pribadi berupa:
+
+* Nama
+* Pekerjaan
+* Tanggal Lahir
+* NIM
+
+### 2. Zodiac Checker
+
+User dapat menekan tombol:
+
+```text
+Cek Oracle Zodiak
+```
+
+Kemudian sistem akan menghitung zodiac berdasarkan tanggal lahir dan menampilkan hasilnya dalam bentuk modal popup.
+
+### 3. Film Favorit
+
+Menampilkan 5 film favorit lengkap dengan poster film.
+
+Daftar film:
+
+1. Kimetsu no Yaiba
+2. The Hobbit
+3. Transformers
+4. Resident Evil
+5. Pengabdi Setan
+
+### 4. Modern User Interface
+
+Menggunakan konsep:
+
+* Glassmorphism
+* Dark Mode
+* Neon Accent
+* Crypto Luxury Theme
+
+---
+
+## 📸 Screenshot
+
+### Halaman Utama
+
+![Home](1-PEWEB2.PNG)
+
+---
+
+### Popup Zodiac
+
+![Zodiac](4-PEWEB2.PNG)
+
+---
+
+### Daftar Film Favorit
+
+![Movie](2-PEWEB2.PNG)
+![Movie](3-PEWEB2.PNG)
+
+---
+
+## 🚀 Cara Menjalankan Project
+
+Clone repository:
+
+```bash
+git clone https://github.com/bang-jekk/PEWEB2-React-Vite.git
+```
+
+Masuk ke folder project:
+
+```bash
+cd NAMA-REPOSITORY
+```
+
+Install dependency:
+
+```bash
+npm install
+```
+
+Jalankan project:
+
+```bash
+npm run dev
+```
+
+---
+
+## 👨‍💻 Identitas
+
+Nama : Zainuddin Muhammad Zakiy
+
+NIM : 23552011173
+
+Program Studi : Teknik Informatika
+
+---
+
+## 📌 Repository
+
+Link Github:
+
+```text
+https://github.com/bang-jekk/PEWEB2-React-Vite.git
+```
+
+---
+
+© 2026 Zainuddin Muhammad Zakiy
