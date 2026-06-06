@@ -102,7 +102,7 @@ git clone https://github.com/bang-jekk/PEWEB2-React-Vite.git
 Masuk ke folder project:
 
 ```bash
-cd NAMA-REPOSITORY
+cd perkenalan
 ```
 
 Install dependency:
